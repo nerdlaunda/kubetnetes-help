@@ -1,5 +1,7 @@
 ## Alias
 
+These are some useful aliases to speed up the process.
+
 ```bash
 alias k=kubectl
 alias kp=kubectl get pods
