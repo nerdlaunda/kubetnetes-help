@@ -10,9 +10,28 @@ alias kpa=kubectl get pods -A
 alias kd=kubectl get deployment
 alias kda=kubectl get deployment -A
 
-alias kpvpvs=kubectl get pv,pvs
-alias kpvpvsa=kubectl get pv,pvs -A
+alias kpvpvc=kubectl get pv,pvc
+alias kpvpvca=kubectl get pv,pvc -A
 
-alias k
+alias ks=kubectl get svc
+
 
 ```
+
+## Vi/Vim
+
+## Templates:
+### Pod
+#### Imperative
+
+#### Declarative
+
+### Deployment
+#### Imperative
+
+#### Declarative
+
+### Service
+#### Imperative
+
+#### Declarative
