@@ -2,7 +2,7 @@
 
 These are some useful aliases to speed up the process.
 
-```bash
+```sh
 alias k=kubectl
 
 # get 
@@ -26,6 +26,7 @@ alias kgnw=kubectl get nodes -o wide
 # get yaml & dryrun
 function kgpy() { kubectl get pod $@ -o yaml }
 function kgdy() { kubectl get deployment $@ -o yaml }
+function kadr() { kubectl apply -f $@ --dry-run=client}
 
 # describe
 alias kd=kubectl describe
