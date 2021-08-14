@@ -99,7 +99,10 @@ Same can be achieved by running below command in terminal.
 echo "set tabstop=2" >> $HOME/.vimrc
 echo "set expandtab" >> $HOME/.vimrc
 echo "set shiftwidth=2" >> $HOME/.vimrc
+```
 
+---
+# todo
 ## Templates:
 ### Pod
 #### Imperative
