@@ -24,9 +24,15 @@ alias kgnw='kubectl get nodes -o wide'
 
 
 # get yaml & dryrun
-function kgpy() { kubectl get pod $@ -o yaml }
-function kgdy() { kubectl get deployment $@ -o yaml }
-function kadr() { kubectl apply -f $@ --dry-run=client}
+function kgpy() {
+    kubectl get pod $@ -o yaml 
+}
+function kgdy() {
+    kubectl get deployment $@ -o yaml 
+}
+function kadr() {
+    kubectl apply -f $@ --dry-run=client
+}
 
 # describe
 alias kd='kubectl describe'
@@ -41,10 +47,14 @@ alias kdsn='kubectl describe svc -n'
 alias ke='kubectl edit'
 
 # scale
-function kscale() { kubectl scale deployment $1 --replicas=$2 }
+function kscale() { 
+    kubectl scale deployment $1 --replicas=$2 
+    }
 
 # update image
-function ksetim() { kubectl set image deployment $@}
+function ksetim() {
+    kubectl set image deployment $@
+    }
 
 # apply
 alias kaf='kubectl apply -f'
@@ -59,8 +69,12 @@ alias krmpfo='kubectl delete --force pod'
 alias krmdfo='kubectl delete --force deployment'
 
 # get bash/sh
-function ksh() { kubectl exec -ti $@ -- sh; }
-function kbash() { kubectl exec -ti $@ -- bash; }
+function ksh() { 
+    kubectl exec -ti $@ -- sh;
+ }
+function kbash() { 
+    kubectl exec -ti $@ -- bash;
+ }
 
 # info
 alias kcinfo='kubectl cluster info'
@@ -68,6 +82,19 @@ alias kcinfo='kubectl cluster info'
 ```
 
 ## Vi/Vim
+
+Set tabs to 2 space, its helpful when editing yaml.
+```bash
+set tabstop=2
+set expandtab
+set shiftwidth=2
+```
+
+Same can be achieved by running below command in terminal.
+```bash
+echo "set tabstop=2" >> $HOME/.vimrc
+echo "set expandtab" >> $HOME/.vimrc
+echo "set shiftwidth=2" >> $HOME/.vimrc
 
 ## Templates:
 ### Pod
