@@ -4,6 +4,7 @@ These are some useful aliases to speed up the process.
 
 ```sh
 alias k='kubectl'
+do="--dry-run=client -o yaml"
 
 # get 
 alias kg='kubectl get'
@@ -24,14 +25,11 @@ alias kgnw='kubectl get nodes -o wide'
 
 
 # get yaml & dryrun
-function kgpy() {
-    kubectl get pod $@ -o yaml 
+function kcpy() {
+    kubectl run $@ -o yaml --dry-run=client 
 }
-function kgdy() {
-    kubectl get deployment $@ -o yaml 
-}
-function kadr() {
-    kubectl apply -f $@ --dry-run=client
+function kcdy() {
+    kubectl create deployment $@ -o yaml --dry-run=client
 }
 
 # describe
@@ -49,12 +47,12 @@ alias ke='kubectl edit'
 # scale
 function kscale() { 
     kubectl scale deployment $1 --replicas=$2 
-    }
+}
 
 # update image
 function ksetim() {
     kubectl set image deployment $@
-    }
+}
 
 # apply
 alias kaf='kubectl apply -f'
