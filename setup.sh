@@ -10,3 +10,7 @@ echo 'Configuating .vimrc'
 echo "set tabstop=2" >> $HOME/.vimrc
 echo "set expandtab" >> $HOME/.vimrc
 echo "set shiftwidth=2" >> $HOME/.vimrc
+
+# COMPLETE -run bash
+echo "Complete!!!"
+exec bash
