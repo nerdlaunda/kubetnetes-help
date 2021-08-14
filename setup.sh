@@ -1,6 +1,6 @@
 echo 'Starting Setup' 
 
-echo 'Configuaring .bashrc'
+echo 'Downloading and Configuaring .bashrc'
 # add alias to bashrc
 curl -s https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc >> $HOME/.bashrc
 source $HOME/.bashrc
