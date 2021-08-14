@@ -1,6 +1,13 @@
 ## Alias
 
 These are some useful aliases to speed up the process.
+#### Installation
+There are 2 ways to add these in terminal. 
+- Copy and append it to the ~/.bashrc file.
+- Use wget and get raw content from https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc and append
+```
+
+```
 
 ```sh
 alias k='kubectl'
