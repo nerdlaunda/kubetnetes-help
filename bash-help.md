@@ -5,7 +5,8 @@ These are some useful aliases to speed up the process.
 There are 2 ways to add these in terminal. 
 - Copy and append it to the ~/.bashrc file.
 - Use curl and get raw content from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc) and append it to `~/.bashrc`.
-```
+- 
+```bash
 curl https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
