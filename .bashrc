@@ -1,4 +1,4 @@
-'''bash
+
 # # # # # # # # # # # # # #
 #  Custom alias for k8s   #
 #          BEGIN          #
@@ -87,4 +87,3 @@ alias kcinfo='kubectl cluster info'
 #  Custom alias for k8s   #
 #           END           #
 # # # # # # # # # # # # # #
-'''
