@@ -7,7 +7,7 @@ There are 2 ways to add these in terminal.
 - Use curl and get raw content from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc) and append it to `~/.bashrc`.
 
 ```bash
-curl https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc >> $HOME/.bashrc
+curl https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
 
