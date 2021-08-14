@@ -3,7 +3,7 @@
 These are some useful aliases to speed up the process.
 #### Installation
 There are 2 ways to add these in terminal. 
-- Copy from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc) and append it to the ~/.bashrc file.
+- Copy from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc) and append it to the ~/.bashrc file.
 - Use curl and get raw content from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc) and append it to `~/.bashrc`.
 
 ```bash
