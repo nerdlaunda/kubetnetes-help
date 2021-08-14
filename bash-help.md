@@ -7,6 +7,7 @@ There are 2 ways to add these in terminal.
 - Use curl and get raw content from [HERE](https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc) and append it to `~/.bashrc`.
 ```
 curl https://raw.githubusercontent.com/nerdlaunda/kubetnetes-help/main/.bashrc >> $HOME/.bashrc
+source $HOME/.bashrc
 ```
 
 ## Vi/Vim
@@ -17,7 +18,7 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 ```
-
+Above can be added by appending the code to the .vimrc file
 Same can be achieved by running below command in terminal.
 ```bash
 echo "set tabstop=2" >> $HOME/.vimrc
