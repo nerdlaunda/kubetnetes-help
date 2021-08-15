@@ -11,6 +11,16 @@ curl https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc
 source $HOME/.bashrc
 ```
 
+ALIAS|Command|Description|Example
+-----|-------|-----------|-------
+`k`|`kubectl`|Base kubectl|`k get pod`
+`kg`|`kubectl get`|Short for kubectl get |`kg deployment`
+`kgp`|`kubectl get pods`|Get pods from default namespace|`kgp`
+`kgpa`|`kubectl get pods -A`|Get pods from all namespace|`kgpa`
+`kgpn`|`kubectl get pods -n`|Get pods from specified namespace|`kgpn <my-namespace>`
+`kgpwa`|`kubectl get pod -o wide -A`|Get pods from default namespace with additional information|`kgpwa`
+`kgpwn`|`kubectl get pod -o wide -n`|Get pods from speeecified namespace with additional information|`kgpwn <my-nameespace>`
+
 ## Vi/Vim
 
 Set tabs to 2 space, its helpful when editing yaml.
