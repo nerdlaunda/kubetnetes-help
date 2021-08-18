@@ -1,16 +1,17 @@
 
-# # # # # # # # # # # # # #
-#  Custom alias for k8s   #
-#          BEGIN          #
-# # # # # # # # # # # # # #
+#CUSTOM-ALIAS-BEGIN-K8S
 alias k='kubectl'
 do="--dry-run=client -o yaml"
 
 # get 
 alias kg='kubectl get'
 alias kgp='kubectl get pods'
+function kgpw(){
+    kubectl get pod $1 -o wide
+}
 alias kgpa='kubectl get pods -A'
 alias kgpn='kubectl get pods -n'
+alias kgpn='kubectl get pods -o wide'
 alias kgpwa='kubectl get pod -o wide -A'
 alias kgpwn='kubectl get pod -o wide -n'
 
@@ -46,6 +47,7 @@ alias kdd='kubectl describe deployment'
 alias kddn='kubectl describe deployment -n'
 alias kds='kubectl describe svc'
 alias kdsn='kubectl describe svc -n'
+alias kdn='kubectl get node'
 
 # edit
 alias ke='kubectl edit'
@@ -83,7 +85,4 @@ function kcbash() {
 # info
 alias kcinfo='kubectl cluster info'
 
-# # # # # # # # # # # # # #
-#  Custom alias for k8s   #
-#           END           #
-# # # # # # # # # # # # # #
+#CUSTOM-ALIAS-END-K8S
