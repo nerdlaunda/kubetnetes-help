@@ -1,6 +1,9 @@
 
 #CUSTOM-ALIAS-BEGIN-K8S
 alias k='kubectl'
+complete -F __start_kubectl k
+
+"source <(kubectl completion bash)" >> ~/.bashrc
 do="--dry-run=client -o yaml"
 
 # get 

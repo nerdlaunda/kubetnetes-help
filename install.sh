@@ -21,6 +21,7 @@ if [ -f "~/.vimrc" ]; then
 else
     echo "~/.vimrv doesn't exists. Creating new file."
     touch ~/.vimrc
+    touch ~/.vimrc-bak-nl-k8s
 fi
 echo 'Downloading and Configuaring .vimrc'
 curl -s https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.vimrc >> $HOME/.vimrc
