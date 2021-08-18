@@ -8,14 +8,11 @@ if [ -f "~/.bashrc-bak-nl-k8s" ]; then
     rm ~/.bashrc-bak-nl-k8s
     sleep .5
 else
-    echo 'Backup for bashrc is not available.'
+    echo 'Backup for .bashrc is not available.'
     echo '!!!  Manual cleaning required. Edit ~/.bashrc and remove everything between "#CUSTOM-ALIAS-END-K8S" and "#CUSTOM-ALIAS-END-K8S"'
-    echo 'Skipping'
-    sleep 1
+    echo 'Skipping...'
 fi
-
 source $HOME/.bashrc
-
 
 if [ -f "~/.vimrc-bak-nl-k8s" ]; then
     echo 'Replacing ~/.vimrc with ~/.vimrc-bak-nl-k8s'
@@ -23,6 +20,7 @@ if [ -f "~/.vimrc-bak-nl-k8s" ]; then
     rm ~/.vimrc-bak-nl-k8s
     sleep .5
 else
+    echo 'Backup for .bashrc is not available.'
     echo 'Removing ~/.vimrc'
     rm ~/.vimrc
 fi

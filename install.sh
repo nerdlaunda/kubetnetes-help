@@ -7,8 +7,20 @@ cp ~/.bashrc ~/.bashrc-bak-nl-k8s
 
 echo 'Downloading and Configuaring .bashrc'
 # add alias to bashrc
+if [ -f "~/.bashrc-bak-nl-k8s" ]; then
+    echo 'Backup file already exist. '
+    responce="n"
+    read -p "Do you want to continue by overwriting it?[y/N]: " -n 1 -r responce
+    echo    
+    if [[ $responce =~ ^[Yy]$ ]]
+    then
+        cp ~/.bashrc ~/.bashrc-bak-nl-k8s
+    fi
+    sleep .5
+fi
 curl -s https://raw.githubusercontent.com/nerdlaunda/kubetnetes-helper/main/.bashrc >> $HOME/.bashrc
 source $HOME/.bashrc
+echo '~/.bashrc is updated.'
 sleep .5
 
 echo 'Configuating .vimrc'
