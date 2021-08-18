@@ -5,6 +5,7 @@ sleep .5
 if [ -f "~/.bashrc-bak-nl-k8s" ]; then
     echo 'Replacing ~/.bashrc with ~/.bashrc-bak-nl-k8s'
     mv ~/.bashrc-bak-nl-k8s ~/.bashrc
+    rm ~/.bashrc-bak-nl-k8s
     sleep .5
 else
     echo 'Backup for bashrc is not available.'
@@ -19,6 +20,7 @@ source $HOME/.bashrc
 if [ -f "~/.vimrc-bak-nl-k8s" ]; then
     echo 'Replacing ~/.vimrc with ~/.vimrc-bak-nl-k8s'
     mv ~/.vimrc-bak-nl-k8s ~/.vimrc
+    rm ~/.vimrc-bak-nl-k8s
     sleep .5
 else
     echo 'Removing ~/.vimrc'

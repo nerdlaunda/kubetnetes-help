@@ -3,7 +3,7 @@
 alias k='kubectl'
 complete -F __start_kubectl k
 
-"source <(kubectl completion bash)" >> ~/.bashrc
+source <(kubectl completion bash)
 do="--dry-run=client -o yaml"
 
 # get 
