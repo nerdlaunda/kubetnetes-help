@@ -15,6 +15,7 @@ fi
 
 source $HOME/.bashrc
 
+
 if [ -f "~/.vimrc-bak-nl-k8s" ]; then
     echo 'Replacing ~/.vimrc with ~/.vimrc-bak-nl-k8s'
     mv ~/.vimrc-bak-nl-k8s ~/.vimrc
