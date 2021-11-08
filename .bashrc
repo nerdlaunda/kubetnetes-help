@@ -17,7 +17,7 @@ alias kgpn='kubectl get pods -n'
 alias kgpn='kubectl get pods -o wide'
 alias kgpwa='kubectl get pod -o wide -A'
 alias kgpwn='kubectl get pod -o wide -n'
-fucntion kgpy {
+fucntion kgpy(){
     kubectl get pod $@ -o yaml
 }
 
@@ -26,7 +26,7 @@ alias kgda='kubectl get deployment -A'
 alias kgdn='kubectl get deployment -n'
 alias kgdwa='kubectl get deployment -o wide -A'
 alias kgdwn='kubectl get deployment -o wide -n'
-fucntion kgdy {
+fucntion kgdy(){
     kubectl get deployment $@ -o yaml
 }
 
@@ -50,10 +50,10 @@ function kcdy() {
 
 # describe
 alias kd='kubectl describe'
-function kdp{
+function kdp(){
     kubectl describe pod $@
 }
-function kdd{
+function kdd(){
     kubectl describe deploy $@
 }
 alias kddn='kubectl describe deployment -n'
@@ -97,7 +97,7 @@ function kexec() {
     kubectl exec -ti $1 -n $2 -- $3
 }
 
-function ktmpr{
+function ktmpr(){
     kubectl run -it --rm testbox --image=$1 -n $2 --restart=Never -- sh
 }
 # info
