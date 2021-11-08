@@ -50,10 +50,10 @@ function kcdy() {
 
 # describe
 alias kd='kubectl describe'
-function kdp{
+function kdp(){
     kubectl describe pod $@
 }
-function kdd{
+function kdd(){
     kubectl describe deploy $@
 }
 alias kddn='kubectl describe deployment -n'
