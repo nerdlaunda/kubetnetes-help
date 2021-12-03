@@ -9,12 +9,11 @@ do="--dry-run=client -o yaml"
 # get 
 alias kg='kubectl get'
 alias kgp='kubectl get pods'
-function kgpw(){
-    kubectl get pod $1 -o wide
+kgpw(){
+    kubectl get pod $@ -o wide
 }
-alias kgpa='kubectl get pods -A'
+
 alias kgpn='kubectl get pods -n'
-alias kgpn='kubectl get pods -o wide'
 alias kgpwa='kubectl get pod -o wide -A'
 alias kgpwn='kubectl get pod -o wide -n'
 
