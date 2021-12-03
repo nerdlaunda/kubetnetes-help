@@ -34,10 +34,12 @@ alias kgnw='kubectl get nodes -o wide'
 
 
 # get yaml & dryrun
-function kcpy() {
-    kubectl run $@ -o yaml --dry-run=client 
+# krpy <name> <image> <ns>
+krpy() {
+    kubectl run $1 --image=$2 -n $3 -o yaml --dry-run=client 
 }
-function kcdy() {
+# kcdy <deployment_name> <image_name> <ns> <replicas>
+kcdy() {
     kubectl create deployment $@ -o yaml --dry-run=client
 }
 
