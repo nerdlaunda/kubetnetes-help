@@ -84,17 +84,10 @@ alias krmpfo='kubectl delete --force pod'
 alias krmdfo='kubectl delete --force deployment'
 
 # get bash/sh
-<<<<<<< HEAD
 kcsh() { 
     kubectl exec -ti $@ -- sh;
  }
 kcbash() { 
-=======
-function kshell() { 
-    kubectl exec -ti $@ -- sh;
-}
-function kcbash() { 
->>>>>>> 03fa8ad28e4a984bef7846e222b5d5c5e5463ec1
     kubectl exec -ti $@ -- bash;
 }
 function kexec() {
