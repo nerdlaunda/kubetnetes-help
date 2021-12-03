@@ -57,14 +57,10 @@ alias kdn='kubectl get node'
 alias ke='kubectl edit'
 
 # scale
-function kscale() { 
-    kubectl scale deployment $1 --replicas=$2 
+kscale() { 
+    kubectl scale deployment $1 --replicas=$2 -n $3
 }
 
-# update image
-function ksetim() {
-    kubectl set image deployment $@
-}
 
 # apply
 alias kaf='kubectl apply -f'
@@ -79,14 +75,18 @@ alias krmpfo='kubectl delete --force pod'
 alias krmdfo='kubectl delete --force deployment'
 
 # get bash/sh
-function kcsh() { 
+kcsh() { 
     kubectl exec -ti $@ -- sh;
  }
-function kcbash() { 
+kcbash() { 
     kubectl exec -ti $@ -- bash;
  }
 
 # info
 alias kcinfo='kubectl cluster info'
+
+kcurltest(){
+    kubectl run curltest --rm --image=curlimages/curl -n $@-- sh
+}
 
 #CUSTOM-ALIAS-END-K8S
