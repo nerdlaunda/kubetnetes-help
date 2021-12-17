@@ -16,7 +16,8 @@ kgpw(){
 alias kgpn='kubectl get pods -n'
 alias kgpwa='kubectl get pod -o wide -A'
 alias kgpwn='kubectl get pod -o wide -n'
-fucntion kgpy() {
+
+kgpy(){
     kubectl get pod $@ -o yaml
 }
 
@@ -25,7 +26,8 @@ alias kgda='kubectl get deployment -A'
 alias kgdn='kubectl get deployment -n'
 alias kgdwa='kubectl get deployment -o wide -A'
 alias kgdwn='kubectl get deployment -o wide -n'
-fucntion kgdy() {
+
+kgdy(){
     kubectl get deployment $@ -o yaml
 }
 
@@ -40,6 +42,10 @@ alias kgnw='kubectl get nodes -o wide'
 
 
 # get yaml & dryrun
+kcpy() {
+    kubectl run $@ -o yaml --dry-run=client 
+}
+
 # krpy <name> <image> <ns>
 krpy() {
     kubectl run $1 --image=$2 -n $3 -o yaml --dry-run=client 
@@ -51,10 +57,16 @@ kcdy() {
 
 # describe
 alias kd='kubectl describe'
-function kdp(){
+
+kdp(){
     kubectl describe pod $@
 }
-function kdd(){
+
+kdd(){
+
+    kubectl describe pod $@
+}
+
     kubectl describe deploy $@
 }
 alias kddn='kubectl describe deployment -n'
@@ -66,6 +78,16 @@ alias kdn='kubectl get node'
 alias ke='kubectl edit'
 
 # scale
+
+kscale() { 
+    kubectl scale deployment $1 --replicas=$2 
+}
+
+# update image
+
+ksetim() {
+    kubectl set image deployment $@
+}
 kscale() { 
     kubectl scale deployment $1 --replicas=$2 -n $3
 }
@@ -84,17 +106,27 @@ alias krmpfo='kubectl delete --force pod'
 alias krmdfo='kubectl delete --force deployment'
 
 # get bash/sh
+
+kshell() { 
+    kubectl exec -ti $@ -- sh;
+}
+
+=======
 kcsh() { 
     kubectl exec -ti $@ -- sh;
  }
+
 kcbash() { 
     kubectl exec -ti $@ -- bash;
 }
-function kexec() {
+
+kexec() {
     kubectl exec -ti $1 -n $2 -- $3
 }
 
-function ktmpr(){
+
+
+ktmpr(){
     kubectl run -it --rm testbox --image=$1 -n $2 --restart=Never -- sh
 }
 # info
