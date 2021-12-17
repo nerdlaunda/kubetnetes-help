@@ -9,13 +9,11 @@ do="--dry-run=client -o yaml"
 # get 
 alias kg='kubectl get'
 alias kgp='kubectl get pods'
-
 kgpw(){
-    kubectl get pod $1 -o wide
+    kubectl get pod $@ -o wide
 }
-alias kgpa='kubectl get pods -A'
+
 alias kgpn='kubectl get pods -n'
-alias kgpn='kubectl get pods -o wide'
 alias kgpwa='kubectl get pod -o wide -A'
 alias kgpwn='kubectl get pod -o wide -n'
 
@@ -44,11 +42,15 @@ alias kgnw='kubectl get nodes -o wide'
 
 
 # get yaml & dryrun
-
 kcpy() {
     kubectl run $@ -o yaml --dry-run=client 
 }
 
+# krpy <name> <image> <ns>
+krpy() {
+    kubectl run $1 --image=$2 -n $3 -o yaml --dry-run=client 
+}
+# kcdy <deployment_name> <image_name> <ns> <replicas>
 kcdy() {
     kubectl create deployment $@ -o yaml --dry-run=client
 }
@@ -61,6 +63,10 @@ kdp(){
 }
 
 kdd(){
+
+    kubectl describe pod $@
+}
+
     kubectl describe deploy $@
 }
 alias kddn='kubectl describe deployment -n'
@@ -82,6 +88,10 @@ kscale() {
 ksetim() {
     kubectl set image deployment $@
 }
+kscale() { 
+    kubectl scale deployment $1 --replicas=$2 -n $3
+}
+
 
 # apply
 alias kaf='kubectl apply -f'
@@ -101,6 +111,11 @@ kshell() {
     kubectl exec -ti $@ -- sh;
 }
 
+=======
+kcsh() { 
+    kubectl exec -ti $@ -- sh;
+ }
+
 kcbash() { 
     kubectl exec -ti $@ -- bash;
 }
@@ -110,10 +125,15 @@ kexec() {
 }
 
 
+
 ktmpr(){
     kubectl run -it --rm testbox --image=$1 -n $2 --restart=Never -- sh
 }
 # info
 alias kcinfo='kubectl cluster info'
+
+kcurltest(){
+    kubectl run curltest --rm --image=curlimages/curl -n $@-- sh
+}
 
 #CUSTOM-ALIAS-END-K8S
